@@ -87,8 +87,11 @@ export default function ToDo({ userId, setPage, theme }) {
             <div className="head">
                 <label htmlFor="">Add Your Task</label>
                 <input className="input" type="text" value={input} onChange={(e) => setInput(e.target.value)} />
+                <i class="fa-solid fa-list-check"></i>
+                
                 <input className="date" type="datetime-local" value={dateTime} onChange={(e) => setDateTime(e.target.value)} />
                 <button onClick={handleAdd}>Add</button>
+                <button>Save</button>
             </div>
             <ol>
                 {arr.map((item, index) => (
@@ -113,10 +116,7 @@ export default function ToDo({ userId, setPage, theme }) {
 
 
             </ol>
-            <div className="btn-bottom">
-                <button onClick={handleSaveBtn}>Save</button>
-                <button onClick={() => setPage("sign-up")}>Log Out</button>
-            </div>
+          
 
         </div>
     );
