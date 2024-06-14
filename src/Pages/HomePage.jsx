@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ToDo from "./ToDo";
 
-export default function HomePage() {
+export default function HomePage({page,setPage}) {
 
     const [theme, setTheme] = useState(
         JSON.parse(localStorage.getItem('theme')) ||
@@ -46,7 +46,7 @@ export default function HomePage() {
 
 
                 <footer>
-                    <p>  <i class="fa-solid fa-right-from-bracket"></i> Logout</p>
+                    <p onClick={()=>setPage("login")}>  <i class="fa-solid fa-right-from-bracket"></i> Logout</p>
                 </footer>
 
             </div>

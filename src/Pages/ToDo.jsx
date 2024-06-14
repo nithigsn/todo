@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 
-export default function ToDo({ userId, setPage, theme }) {
+export default function ToDo({ userId, theme }) {
     const [arr, setArr] = useState([]);
     const [input, setInput] = useState("");
     const [dateTime, setDateTime] = useState("");

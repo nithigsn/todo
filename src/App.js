@@ -1,11 +1,11 @@
-import HomePage from './Pages/HomePage';
+import Main from './Pages/Main';
 
 
 
 function App() {
   return (
     <div className="App">
-   <HomePage/>
+   <Main/>
     </div>
   );
 }
