@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import ToDo from "./ToDo";
 
-export default function HomePage({page,setPage}) {
+export default function HomePage({setPage}) {
+   
+
 
     const [theme, setTheme] = useState(
         JSON.parse(localStorage.getItem('theme')) ||

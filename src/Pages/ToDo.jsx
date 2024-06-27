@@ -92,6 +92,10 @@ export default function ToDo({ userId, theme }) {
                 <input className="date" type="datetime-local" value={dateTime} onChange={(e) => setDateTime(e.target.value)} />
                 <button onClick={handleAdd}>Add</button>
                 <button>Save</button>
+
+                <div className="info">
+                  <p>  hello</p>
+                </div>
             </div>
             <ol>
                 {arr.map((item, index) => (
