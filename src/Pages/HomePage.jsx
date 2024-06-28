@@ -28,9 +28,6 @@ export default function HomePage({setPage}) {
                     <p> <i class="fa-solid fa-user"></i>Username</p>
 
                 </div>
-
-
-
                 <div className="theme-wrap">
                     <h2>Themes</h2>
                     <div className="theme">
@@ -54,7 +51,6 @@ export default function HomePage({setPage}) {
             </div>
 
             <ToDo theme={theme} setTheme={setTheme} />
-
         </div>
     );
 }
