@@ -207,17 +207,23 @@ i {
   text-align: center;
   opacity: 0;
   z-index: 999;
+  
 }
 .triggered{
   color: white;
   position: absolute;
   margin-top: 300px;
+  margin-right: 500px;
   height: 50px;
   width: 550px;
   border: 1px solid black;
   text-align: center;
   z-index: 999;
+  transform: translateX(45%);
+  transition: transform 0.5s ease-in-out;
+  
 }
+
 
 
 

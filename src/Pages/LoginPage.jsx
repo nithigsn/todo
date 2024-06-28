@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-export default function LoginPage({ setPage, setUserId }) {
+export default function LoginPage({ setPage, setUserId,userId }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const[trigger,setTrigger]=useState('trigger-msg')
+    const [trigger, setTrigger] = useState('trigger-msg');
 
 
 
@@ -32,13 +32,14 @@ export default function LoginPage({ setPage, setUserId }) {
                     if (result.status) {
                         setUserId(result.data._id);
                         setPage('home');
+                      console.log(userId ,result.data._id);
                     }
                     else {
-                       setTrigger('triggered');
-                     
-                      
+                        setTrigger('triggered');
+
+
                     }
-                })
+                })                   
 
         }
     }
@@ -60,8 +61,8 @@ export default function LoginPage({ setPage, setUserId }) {
             </div>
 
             <div className="login-btn">
-            <button onClick={handleSignIn}>Login</button>
-            <button onClick={() => setPage('sign-up')}>Sign Up</button>
+                <button onClick={handleSignIn} >Login</button>
+                <button onClick={() => setPage('sign-up')}>Sign Up</button>
             </div>
 
             <div className={trigger}>

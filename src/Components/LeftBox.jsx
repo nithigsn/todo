@@ -1,31 +1,15 @@
-import { useState, useEffect } from "react";
-import ToDo from "./ToDo";
+import { useState,useEffect } from "react";
 
-export default function HomePage({setPage}) {
+export default function LeftBox({userId,setPage,setTheme}){
+
    
+    return(
 
-
-    const [theme, setTheme] = useState(
-        JSON.parse(localStorage.getItem('theme')) ||
-        "bucket-list gradiant");
-
-
-
-
-    useEffect(() => {
-        localStorage.setItem('theme', JSON.stringify(theme));
-    }, [theme]);
-
-
-
-    return (
-        <div className="homepage">
-
-            <div className="left-box">
+        <div className="left-box">
 
                 <div className="header">
 
-                    <p> <i class="fa-solid fa-user"></i>Username</p>
+                    <p> <i class="fa-solid fa-user"></i>{userId}</p>
 
                 </div>
                 <div className="theme-wrap">
@@ -49,8 +33,5 @@ export default function HomePage({setPage}) {
                 </footer>
 
             </div>
-
-            <ToDo theme={theme} setTheme={setTheme} />
-        </div>
     );
 }

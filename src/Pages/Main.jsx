@@ -1,7 +1,7 @@
 import LoginPage from "./LoginPage";
-import HomePage from './HomePage'
 import { useState,useEffect } from "react";
 import SignUpPage from "./SignUpPage";
+import ToDo from "./ToDo";
 
 export default function Main() {
 
@@ -21,7 +21,7 @@ export default function Main() {
         case "login":
             return <LoginPage page={page} setPage={setPage} setUserId={setUserId} />
         case "home":
-            return <HomePage page={page} setPage={setPage} setUserId={setUserId} />
+            return <ToDo page={page} setPage={setPage} userid={userid} setUserId={setUserId} />
         case "sign-up":
             return <SignUpPage page={page} setPage={setPage} setUserId={setUserId} />
         default:

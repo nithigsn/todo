@@ -29,12 +29,9 @@ export default function SignUpPage({ setPage, setUserId }) {
                     if (result.status) {
                         setUserId(result.data._id);
                         setPage('home');
-
+                        console.log(result.data._id)
                     }
                 })
-
-
-
         }
         else {
             alert("fill up")
