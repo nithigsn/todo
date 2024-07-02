@@ -19,6 +19,9 @@ export default function LeftBox({userId,setPage,setTheme}){
   }, [name]);
 
 
+
+
+  //gets name from database
     useEffect(() => {
         const requestOptions = {
             method: "GET",

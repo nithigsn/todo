@@ -9,7 +9,9 @@ export default function Main() {
     const [userId, setUserId] = useState('');
     
 
-    //UseState ro Switch Page Using Switch 
+    //UseState to Switch Pages Using Switch 
+
+    //using local storage to store states to avoid changing states when reloading
     const [page, setPage] = useState(
 
         JSON.parse(localStorage.getItem('page')) || "login"
@@ -20,8 +22,12 @@ export default function Main() {
     }, [page]);
 
 
+
+    //loading page 
     const [isLoading, setIsLoading] = useState(false);
 
+
+    //if loading page is home  will activate
     const handlePageChange = (newPage) => {
         if (newPage === 'home') {
             setIsLoading(true);
@@ -38,6 +44,8 @@ export default function Main() {
         return <Loader />;
     }
 
+
+    //switch case to switch pages
     switch (page) {
         case "login":
             return <LoginPage page={page} setPage={handlePageChange} userId={userId} setUserId={setUserId} />;

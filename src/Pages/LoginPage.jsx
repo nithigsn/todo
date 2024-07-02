@@ -1,19 +1,21 @@
 import { useState } from "react";
 
 export default function LoginPage({ setPage, setUserId }) {
+
+    //usestate variables
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+
+    //trigger msg 
     const [trigger, setTrigger] = useState('trigger-msg');
 
 
 
 
-
+     //function to sign in
     function handleSignIn() {
         if (username !== '' && password !== '') {
-            // 🔖 API CONNECTION CODE
-            // ---------------------------------------------------------------------
-            // 🏷️ START 
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
             const raw = JSON.stringify({
@@ -37,15 +39,12 @@ export default function LoginPage({ setPage, setUserId }) {
                         console.log(result.data._id);
                     }
                     else {
-                        setTrigger('triggered');
+                        setTrigger('triggered'); //if username or password is wrong
                         
                     }
                 })
                 .catch((error) => console.error(error));
-            // 🏷️ end
-            // ---------------------------------------------------------------------
-            // Actually this user id will be coming from back-end
-
+           
         }
 
 
@@ -95,6 +94,9 @@ export default function LoginPage({ setPage, setUserId }) {
                             <button onClick={() => setPage('sign-up')}>Sign Up</button>
                         </div>
 
+
+
+                          {/* if username or password is wrong this will show on screen */}
                         <div className={trigger}>
                             <p>Incorrect Username or Password</p>
                         </div>
@@ -102,7 +104,9 @@ export default function LoginPage({ setPage, setUserId }) {
                     </div>
 
 
-                    <div className="loginleft-box">
+
+                  
+                    <div className="loginleft-box">    
 
                         <h2>Welcome Back !</h2>
                         <h3>Tasks are waiting for You </h3>

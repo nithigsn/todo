@@ -5,7 +5,7 @@ export default function SignUpPage({ setPage, setUserId }) {
     const [password, setPassword] = useState('');
     const [confirmpassword, setConfirmPassword] = useState('');
 
-
+     //funtion signup
     function handleSignUp() {
         if (password === confirmpassword) {
             const myHeaders = new Headers();

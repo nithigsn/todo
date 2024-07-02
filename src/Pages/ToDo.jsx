@@ -6,11 +6,11 @@ export default function ToDo({ userId, setPage }) {
 
     //usestate variables
     const [arr, setArr] = useState([]);
-
-
     const [input, setInput] = useState("");
 
 
+
+    
 
     //change theme 
     const [theme, setTheme] = useState(
@@ -23,7 +23,7 @@ export default function ToDo({ userId, setPage }) {
 
 
 
-
+    //Gets Users Tasks From Database
     useEffect(() => {
         const requestOptions = {
             method: "GET",
@@ -45,7 +45,7 @@ export default function ToDo({ userId, setPage }) {
 
 
 
-
+    //function to save tasks and sent it to Database
     function handleSaveBtn() {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -72,14 +72,11 @@ export default function ToDo({ userId, setPage }) {
                 }
             })
             .catch((error) => console.error(error));
-
-
-
     }
 
 
 
-
+    //function to Add Tasks
     function handleAdd() {
         if (input !== "") {
             setArr([...arr, input]);
@@ -87,11 +84,15 @@ export default function ToDo({ userId, setPage }) {
         }
     }
 
+
+    //function to delete tasks
     function handleDelete(idx) {
         let res = arr.filter((value, index) => index !== idx);
         setArr(res);
     }
 
+
+    //function to update task
     function handleUpdate(idx) {
         let update = prompt("Update your task");
         if (update !== "") {
@@ -131,7 +132,7 @@ export default function ToDo({ userId, setPage }) {
                             <span >Save</span></button>
                     </div>
 
-                    {arr.length === 0 && (
+                    {arr.length === 0 && (        //logic if arr is empty this will show on screen 
                         <div className="info">
                             <p>Lost Track Of Tasks ? <br />
                              Tasks met their Deadline ? <br />
@@ -140,7 +141,10 @@ export default function ToDo({ userId, setPage }) {
                     )}
                 </div>
                 <ol>
-                    {arr.map((item, index) => (
+
+                    {/* list rendering from arr */}
+
+                    {arr.map((item, index) => (    
 
                         <div key={index} className="task">
 
