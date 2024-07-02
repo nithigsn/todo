@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sketchfab-embed-wrapper"> <iframe title="cHe" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="1920" height="1080" src="https://sketchfab.com/models/1e529f4b8efc4f20925957a9a4208dcd/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/che-1e529f4b8efc4f20925957a9a4208dcd?utm_medium=embed&utm_campaign=share-popup&utm_content=1e529f4b8efc4f20925957a9a4208dcd" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> cHe </a> by <a href="https://sketchfab.com/luyssport?utm_medium=embed&utm_campaign=share-popup&utm_content=1e529f4b8efc4f20925957a9a4208dcd" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> luyssport </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=1e529f4b8efc4f20925957a9a4208dcd" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+    
+</body>
+</html>
+
+
+
+
+<div className="signup">
+    
+
+</div>
+
+
+<!-- Fetch API -->
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+const raw = JSON.stringify({
+  "username": "nitty",
+  "password": "nitty123"
+});
+
+const requestOptions = {
+  method: "GET",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("http://localhost:3436/user/items/667d5c7083c6c0e5409dd79a", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+
+
+
+  

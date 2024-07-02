@@ -22,6 +22,24 @@ export default function ToDo({ userId, setPage }) {
 
 
 
+    useEffect(() => {
+        const requestOptions = {
+            method: "GET",
+            redirect: "follow"
+        };
+
+        fetch("http://localhost:3436/user/items/" + userId, requestOptions)
+            .then((response) => response.json())
+            .then((result) => {
+                if (result.status) {
+                    setArr(result.data.items);
+                } else {
+                    alert(result.msg);
+                }
+            })
+            .catch((error) => console.error(error));
+    }, []);
+
 
 
 
@@ -44,20 +62,19 @@ export default function ToDo({ userId, setPage }) {
 
         fetch("http://localhost:3436/user/items", requestOptions)
             .then((response) => response.json())
-            .then((result) =>{
-                if(result.status){
+            .then((result) => {
+                if (result.status) {
+                    alert(result.msg);
+                } else {
                     alert(result.msg);
                 }
-                else{
-                    alert(result.msg);
-                    console.log(result,arr);
-                    console.log(result.data._id);
-                }
-
             })
             .catch((error) => console.error(error));
-       
+
+
+
     }
+
 
 
 
@@ -86,7 +103,7 @@ export default function ToDo({ userId, setPage }) {
 
 
         <div className="homepage">
-            <LeftBox setTheme={setTheme} setPage={setPage} />
+            <LeftBox setTheme={setTheme} setPage={setPage} userId={userId} />
 
 
             <div className={theme}>
@@ -95,27 +112,30 @@ export default function ToDo({ userId, setPage }) {
                 <h3>ToDo that will keep you remember</h3>
 
 
-
                 <div className="head">
                     <label htmlFor="">Add Your Task</label>
 
-                    <div class="textInputWrapper">
+                    <div className="textInputWrapper">
                         <input placeholder="Type Here" type="text" className="textInput" value={input} onChange={(e) => setInput(e.target.value)} />
                     </div>
                     <div className="todo-btn">
                         <div className="add-btn">
                             <button type="button" class="button" onClick={handleAdd}>
-                                <span class="button__text">Add Task</span>
-                                <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                                <span className="button__text">Add Task</span>
+                                <span className="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
                             </button>
                         </div>
                         <button className="save-btn" onClick={handleSaveBtn}>
                             <span >Save</span></button>
                     </div>
 
-                    <div className="info">
-                        <p>  hello</p>
-                    </div>
+                    {arr.length === 0 && (
+                        <div className="info">
+                            <p>Lost Track Of Tasks ? <br />
+                             Tasks met their Deadline ? <br />
+                            Well ! Add Your Tasks Here</p>
+                        </div>
+                    )}
                 </div>
                 <ol>
                     {arr.map((item, index) => (

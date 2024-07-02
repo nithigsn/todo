@@ -2,6 +2,46 @@ import { useState,useEffect } from "react";
 
 export default function LeftBox({userId,setPage,setTheme}){
 
+    const[name,setName]=useState('');
+
+
+      // Load name from local storage on component mount
+  useEffect(() => {
+    const storedName = localStorage.getItem('storedName');
+    if (storedName) {
+      setName(storedName);
+    }
+  }, []);
+
+  // Update local storage whenever name changes
+  useEffect(() => {
+    localStorage.setItem('storedName', name);
+  }, [name]);
+
+
+    useEffect(() => {
+        const requestOptions = {
+            method: "GET",
+            redirect: "follow"
+        };
+
+        fetch("http://localhost:3436/user/items/" + userId, requestOptions)
+            .then((response) => response.json())
+            .then((result) => {
+                if (result.status) {
+                    setName(result.data.username);
+                } else {
+                    alert(result.msg);
+                }
+            })
+            .catch((error) => console.error(error));
+    }, []);
+    
+
+
+
+
+
    
     return(
 
@@ -9,7 +49,7 @@ export default function LeftBox({userId,setPage,setTheme}){
 
                 <div className="header">
 
-                    <p> <i class="fa-solid fa-user"></i>{userId}</p>
+                    <p> <i className="fa-solid fa-user"></i>{name}</p>
 
                 </div>
                 <div className="theme-wrap">
@@ -29,7 +69,7 @@ export default function LeftBox({userId,setPage,setTheme}){
 
 
                 <footer>
-                    <p onClick={()=>setPage("login")}>  <i class="fa-solid fa-right-from-bracket"></i> Logout</p>
+                    <p onClick={()=>setPage("login")}>  <i className="fa-solid fa-right-from-bracket"></i> Logout</p>
                 </footer>
 
             </div>
