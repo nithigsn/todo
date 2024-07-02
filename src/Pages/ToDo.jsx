@@ -7,7 +7,7 @@ export default function ToDo({ userId, setPage }) {
     //usestate variables
     const [arr, setArr] = useState([]);
 
-    
+
     const [input, setInput] = useState("");
 
 
@@ -15,7 +15,7 @@ export default function ToDo({ userId, setPage }) {
     //change theme 
     const [theme, setTheme] = useState(
         JSON.parse(localStorage.getItem('theme')) ||
-        "bucket-list gradiant");
+        "bucket-list nature ");
 
     useEffect(() => {
         localStorage.setItem('theme', JSON.stringify(theme));
