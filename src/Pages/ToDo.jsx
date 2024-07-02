@@ -66,9 +66,9 @@ export default function ToDo({ userId, setPage }) {
             .then((response) => response.json())
             .then((result) => {
                 if (result.status) {
-                    alert(result.msg);
+                    console.log('Task Saved Successfully');
                 } else {
-                    alert(result.msg);
+                    console.log('error');
                 }
             })
             .catch((error) => console.error(error));
