@@ -6,6 +6,8 @@ export default function ToDo({ userId, setPage }) {
 
     //usestate variables
     const [arr, setArr] = useState([]);
+
+    
     const [input, setInput] = useState("");
 
 
@@ -28,7 +30,7 @@ export default function ToDo({ userId, setPage }) {
             redirect: "follow"
         };
 
-        fetch("http://localhost:3436/user/items/" + userId, requestOptions)
+        fetch("https://taskchamp-one.vercel.app/user/items/" + userId, requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 if (result.status) {
@@ -60,7 +62,7 @@ export default function ToDo({ userId, setPage }) {
             redirect: "follow"
         };
 
-        fetch("http://localhost:3436/user/items", requestOptions)
+        fetch("https://taskchamp-one.vercel.app/user/items", requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 if (result.status) {

@@ -25,7 +25,7 @@ export default function LeftBox({userId,setPage,setTheme}){
             redirect: "follow"
         };
 
-        fetch("http://localhost:3436/user/items/" + userId, requestOptions)
+        fetch("https://taskchamp-one.vercel.app/user/items/" + userId, requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 if (result.status) {

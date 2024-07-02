@@ -23,7 +23,7 @@ export default function SignUpPage({ setPage, setUserId }) {
                 redirect: "follow"
             };
 
-            fetch("http://localhost:3436/user/sign-up", requestOptions)
+            fetch("https://taskchamp-one.vercel.app/user/sign-up", requestOptions)
                 .then((response) => response.json())
                 .then((result) => {
                     if (result.status) {

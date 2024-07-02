@@ -28,7 +28,7 @@ export default function LoginPage({ setPage, setUserId }) {
                 redirect: "follow"
             };
 
-            fetch("http://localhost:3436/user/sign-in", requestOptions)
+            fetch("https://taskchamp-one.vercel.app/user/sign-in", requestOptions)
                 .then((response) => response.json())
                 .then((result) => {
                     if (result.status) {
