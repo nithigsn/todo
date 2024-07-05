@@ -13,7 +13,7 @@ export default function LoginPage({ setPage, setUserId }) {
 
 
 
-     //function to sign in
+    //function to sign in
     function handleSignIn() {
         if (username !== '' && password !== '') {
             const myHeaders = new Headers();
@@ -40,11 +40,11 @@ export default function LoginPage({ setPage, setUserId }) {
                     }
                     else {
                         setTrigger('triggered'); //if username or password is wrong
-                        
+
                     }
                 })
                 .catch((error) => console.error(error));
-           
+
         }
 
 
@@ -71,9 +71,20 @@ export default function LoginPage({ setPage, setUserId }) {
                 <div className="login-box">
 
 
+
+
+                    <div className="loginleft-box">
+
+                        <h2>Welcome Back !</h2>
+                        <h3>Tasks are waiting for You </h3>
+                    </div>
+
+
                     <div className="loginright-box">
 
-                        <form action="" method="get">
+                        <form action="">
+
+
                             <div className="group">
                                 <i className="fa-regular fa-user"></i>
                                 <input className="input" type="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} />
@@ -96,7 +107,7 @@ export default function LoginPage({ setPage, setUserId }) {
 
 
 
-                          {/* if username or password is wrong this will show on screen */}
+                        {/* if username or password is wrong this will show on screen */}
                         <div className={trigger}>
                             <p>Incorrect Username or Password</p>
                         </div>
@@ -105,12 +116,8 @@ export default function LoginPage({ setPage, setUserId }) {
 
 
 
-                  
-                    <div className="loginleft-box">    
 
-                        <h2>Welcome Back !</h2>
-                        <h3>Tasks are waiting for You </h3>
-                    </div>
+
                 </div>
 
             </div>

@@ -58,7 +58,7 @@ export default function SignUpPage({ setPage, setUserId }) {
 
                     <div className="loginleft-box">
 
-                        <h2>Task Champ Makes Task Management Easy</h2>
+                        <h3>Task Champ Makes Task Management Easy</h3>
                     </div>
 
                     <div className="loginright-box">

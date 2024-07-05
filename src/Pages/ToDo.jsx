@@ -43,6 +43,10 @@ export default function ToDo({ userId, setPage }) {
     }, []);
 
 
+    
+
+
+
 
 
     //function to save tasks and sent it to Database
@@ -87,7 +91,7 @@ export default function ToDo({ userId, setPage }) {
 
     //function to delete tasks
     function handleDelete(idx) {
-        let res = arr.filter((value, index) => index !== idx);
+        let res = arr.filter((index) => index !== idx);
         setArr(res);
     }
 

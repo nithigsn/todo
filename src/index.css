@@ -119,12 +119,13 @@ i {
 .left-nav .logo-img{
   margin-left: 100px;
 }
+
 .logo-img {
   height: 8vh;
   width: 8vh;
   background-image: url(./Assets/logo.png);
   background-size: cover;
-  border-radius: 50%;
+
 
 }
 
@@ -785,4 +786,42 @@ button:active {
 
 .info p {
   color: white;
+}
+
+
+
+
+/* Responsive for 427px */
+@media  screen and  (max-width:427px) {
+
+ header{
+  height: 20px;
+ }
+
+  .login-box{
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    width: 70vw;
+  }
+  .left-nav{
+    display: flex;
+    justify-content: start;
+   
+  }
+  .loginleft-box h2,h3{
+    width: 100%;
+    margin:10px 0;
+  }
+  .input{
+    width: 100px;
+  }
+  .login button{
+    height: 40px;
+    width: 100px;
+  }
+.sign-up-btn{
+  display: flex;  
+}
+
 }
