@@ -11,7 +11,7 @@ i {
 
 
 /* Loading Animation */
-.loader-page{
+.loader-page {
   background-color: black;
   height: 100vh;
   width: 100vw;
@@ -73,16 +73,16 @@ i {
 @keyframes loading-step {
   0% {
     box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
-            0 10px 0 #f2f2f2,
-            -35px 50px 0 #f2f2f2,
-            -70px 90px 0 #f2f2f2;
+      0 10px 0 #f2f2f2,
+      -35px 50px 0 #f2f2f2,
+      -70px 90px 0 #f2f2f2;
   }
 
   100% {
     box-shadow: 0 10px 0 #f2f2f2,
-            -35px 50px 0 #f2f2f2,
-            -70px 90px 0 #f2f2f2,
-            -70px 90px 0 rgba(0, 0, 0, 0);
+      -35px 50px 0 #f2f2f2,
+      -70px 90px 0 #f2f2f2,
+      -70px 90px 0 rgba(0, 0, 0, 0);
   }
 }
 
@@ -116,7 +116,7 @@ i {
 
 
 
-.left-nav .logo-img{
+.left-nav .logo-img {
   margin-left: 100px;
 }
 
@@ -144,20 +144,27 @@ i {
   display: flex;
   height: 50vh;
   width: 60vw;
-  box-shadow: 
-  0 4px 6px rgba(0, 0, 0, 0.1),  /* Bottom shadow */
-  0 -4px 6px rgba(0, 0, 0, 0.1), /* Top shadow */
-  4px 0 6px rgba(0, 0, 0, 0.1),  /* Right shadow */
-  -4px 0 6px rgba(0, 0, 0, 0.1), /* Left shadow */
-  0 1px 3px rgba(0, 0, 0, 0.08); /* Extra subtle shadow */
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    /* Bottom shadow */
+    0 -4px 6px rgba(0, 0, 0, 0.1),
+    /* Top shadow */
+    4px 0 6px rgba(0, 0, 0, 0.1),
+    /* Right shadow */
+    -4px 0 6px rgba(0, 0, 0, 0.1),
+    /* Left shadow */
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  /* Extra subtle shadow */
   backdrop-filter: blur(10px);
-  
+
 
 }
-.loginleft-box h2{
+
+.loginleft-box h2 {
   text-align: center;
-  
+
 }
+
 .loginleft-box,
 .loginright-box {
   display: flex;
@@ -166,13 +173,16 @@ i {
   justify-content: center;
   width: 30vw;
 }
+
 .login input,
-.login button{
+.login button {
   margin-top: 20px;
 }
+
 .login input {
   color: black;
 }
+
 .login-btn {
   margin-top: 20px;
   display: flex;
@@ -218,6 +228,7 @@ i {
   -webkit-transition: 100ms;
   transition: 100ms;
 }
+
 .group {
   display: flex;
   line-height: 30px;
@@ -269,7 +280,8 @@ i {
   width: 1rem;
   height: 1rem;
 }
-.sign-up-btn{
+
+.sign-up-btn {
   margin-top: 20px;
 }
 
@@ -290,15 +302,20 @@ i {
   color: rgb(0, 0, 0);
   position: absolute;
   margin-top: -500px;
-  margin-right: 0;
+  margin-right: 900px;
   height: 50px;
   width: 550px;
-  box-shadow: 
-    0 4px 6px rgba(0, 0, 0, 0.1),  /* Bottom shadow */
-    0 -4px 6px rgba(0, 0, 0, 0.1), /* Top shadow */
-    4px 0 6px rgba(0, 0, 0, 0.1),  /* Right shadow */
-    -4px 0 6px rgba(0, 0, 0, 0.1), /* Left shadow */
-    0 1px 3px rgba(0, 0, 0, 0.08); /* Extra subtle shadow */
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    /* Bottom shadow */
+    0 -4px 6px rgba(0, 0, 0, 0.1),
+    /* Top shadow */
+    4px 0 6px rgba(0, 0, 0, 0.1),
+    /* Right shadow */
+    -4px 0 6px rgba(0, 0, 0, 0.1),
+    /* Left shadow */
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  /* Extra subtle shadow */
   text-align: center;
   z-index: 999;
   transform: translateX(45%);
@@ -792,36 +809,42 @@ button:active {
 
 
 /* Responsive for 427px */
-@media  screen and  (max-width:427px) {
+@media screen and (max-width:427px) {
 
- header{
-  height: 20px;
- }
+  header {
+    height: 20px;
+  }
 
-  .login-box{
+  .login-box {
     flex-direction: column;
     justify-self: center;
     align-items: center;
     width: 70vw;
   }
-  .left-nav{
+
+  .left-nav {
     display: flex;
     justify-content: start;
-   
+
   }
-  .loginleft-box h2,h3{
+
+  .loginleft-box h2,
+  h3 {
     width: 100%;
-    margin:10px 0;
+    margin: 10px 0;
   }
-  .input{
+
+  .input {
     width: 100px;
   }
-  .login button{
+
+  .login button {
     height: 40px;
     width: 100px;
   }
-.sign-up-btn{
-  display: flex;  
-}
+
+  .sign-up-btn {
+    display: flex;
+  }
 
 }
