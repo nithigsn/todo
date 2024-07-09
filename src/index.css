@@ -272,8 +272,8 @@ i {
   margin-top: 15px;
 }
 
-.signup .icon,
-i {
+.signup .icon
+i,.left-box i {
   position: absolute;
   left: 1rem;
   fill: none;
@@ -393,6 +393,7 @@ i {
 
 .textInputWrapper:focus-within:after {
   border-bottom: 2px solid var(--accent-color);
+ 
   transform: scaleX(1);
 }
 
@@ -424,7 +425,7 @@ i {
   font-size: 14px;
   font-weight: 500;
   padding: 12px;
-  width: 100%;
+  width: 200px;
   border-left: none;
   border-bottom: none;
   border-right: none;
@@ -624,26 +625,32 @@ footer p {
   width: 60vw;
   margin-top: 20px;
   margin-right: 20px;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background-color: rgba(240, 255, 249, 0);
   backdrop-filter: blur(5px);
   box-shadow: 1px 1px 10px black;
-
-
 }
+.task li{
+  width: 40vw;
+}
+
 
 .btn {
   display: flex;
   width: 200px;
+  align-items: center;
   justify-content: space-around;
 }
-
-.btn div {
-  width: 100px;
+.btn-wrap{
+  display: flex;
+  justify-content: center;
+  width: 60px;
 }
 
-.button {
+
+
+.button,.update-btn {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -677,17 +684,18 @@ footer p {
   align-items: center;
 }
 
+
+.update-btn:hover {
+  width: 50px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: rgb(69, 255, 78);
+  align-items: center;
+}
+
 .button:hover .svgIcon {
   transition-duration: .3s;
   transform: translateY(0.2%);
-}
-
-.button::before {
-  position: absolute;
-  content: "Delete";
-  color: white;
-  transition-duration: .3s;
-  font-size: 2px;
 }
 
 .button:hover::before {
@@ -697,12 +705,12 @@ footer p {
   transition-duration: .3s;
 }
 
-
-
 button:active {
   transform: scale(0.95);
 }
 
+
+/* ----------------------------------------Home Page leftBox -----------------------*/
 .homepage {
   height: 100vh;
   width: 100vw;

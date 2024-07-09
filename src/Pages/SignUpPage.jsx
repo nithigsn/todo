@@ -7,6 +7,8 @@ export default function SignUpPage({ setPage, setUserId }) {
 
      //funtion signup
     function handleSignUp() {
+
+        
         if (password === confirmpassword) {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
