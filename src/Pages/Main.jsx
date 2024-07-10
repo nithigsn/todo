@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import SignUpPage from "./SignUpPage";
 import ToDo from "./ToDo";
 import Loader from "./Loader";
+import LeftBox from "../Components/LeftBox";
 
 export default function Main() {
     // UseState Variables
@@ -53,6 +54,8 @@ export default function Main() {
             return <ToDo page={page} setPage={handlePageChange} userId={userId} setUserId={setUserId} />;
         case "sign-up":
             return <SignUpPage page={page} setPage={handlePageChange} userId={userId} setUserId={setUserId} />;
+            case "theme":
+                return <LeftBox page={page} setPage={handlePageChange} userId={userId} setUserId={setUserId} />;
         default:
             return <LoginPage page={page} setPage={handlePageChange} userId={userId} setUserId={setUserId} />;
     }

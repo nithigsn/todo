@@ -272,8 +272,8 @@ i {
   margin-top: 15px;
 }
 
-.signup .icon
-i,.left-box i {
+.signup .icon i,
+.left-box i {
   position: absolute;
   left: 1rem;
   fill: none;
@@ -337,7 +337,7 @@ i,.left-box i {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  width: 75vw;
+  width: 100vw;
 }
 
 
@@ -393,7 +393,7 @@ i,.left-box i {
 
 .textInputWrapper:focus-within:after {
   border-bottom: 2px solid var(--accent-color);
- 
+
   transform: scaleX(1);
 }
 
@@ -616,9 +616,6 @@ footer p {
   margin-left: 40px;
 }
 
-
-
-
 .task {
   display: flex;
   height: 40px;
@@ -631,7 +628,8 @@ footer p {
   backdrop-filter: blur(5px);
   box-shadow: 1px 1px 10px black;
 }
-.task li{
+
+.task li {
   width: 40vw;
 }
 
@@ -642,7 +640,8 @@ footer p {
   align-items: center;
   justify-content: space-around;
 }
-.btn-wrap{
+
+.btn-wrap {
   display: flex;
   justify-content: center;
   width: 60px;
@@ -650,7 +649,8 @@ footer p {
 
 
 
-.button,.update-btn {
+.button,
+.update-btn {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -710,17 +710,18 @@ button:active {
 }
 
 
-/* ----------------------------------------Home Page leftBox -----------------------*/
+/* ----------------------------------------Home Page and LeftBox -----------------------*/
 .homepage {
   height: 100vh;
   width: 100vw;
   display: flex;
+  
 
 }
 
 .left-box {
   height: 100vh;
-  width: 25vw;
+  width: 30vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -736,6 +737,11 @@ button:active {
       hsl(45deg 100% 50%) 88%,
       hsl(55deg 100% 50%) 100%);
   color: white;
+}
+
+
+.homepage.left-box-hidden {
+  padding-left: 0;
 }
 
 .theme div {
@@ -855,4 +861,26 @@ button:active {
     display: flex;
   }
 
+
+  .homepage {
+    width: 100%;
+  }
+
+  .bucket-list {
+    width: 100%;
+  }
+
+  .head {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .homepage h3 {
+    text-align: center;
+  }
+
+  .task {
+    width: 80vw;
+  }
 }

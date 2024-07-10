@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 
-export default function LeftBox({ userId, setPage, setTheme }) {
+export default function LeftBox({ userId, setPage, setTheme,menu,setMenu }) {
 
     const [name, setName] = useState('');
-
-
     // Load name from local storage on component mount
     useEffect(() => {
         const storedName = localStorage.getItem('storedName');
@@ -17,6 +15,10 @@ export default function LeftBox({ userId, setPage, setTheme }) {
     useEffect(() => {
         localStorage.setItem('storedName', name);
     }, [name]);
+
+
+
+
 
 
 
@@ -48,9 +50,11 @@ export default function LeftBox({ userId, setPage, setTheme }) {
 
     return (
 
-        <div className="left-box">
+        <div className={menu}>
 
             <div className="header">
+
+                {/* <button onClick={()=>setPage('home')}>Home</button> */}
 
                 <p> <i className="fa-solid fa-user"></i>{name}</p>
 
