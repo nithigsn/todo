@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function LeftBox({ userId, setPage, setTheme,menu,setMenu }) {
+export default function LeftBox({ userId, setPage, setTheme, menu, setMenu }) {
 
     const [name, setName] = useState('');
     // Load name from local storage on component mount
@@ -54,8 +54,9 @@ export default function LeftBox({ userId, setPage, setTheme,menu,setMenu }) {
 
             <div className="header">
 
-                {/* <button onClick={()=>setPage('home')}>Home</button> */}
 
+
+                <button onClick={() => setMenu('left-box')}>Close Menu</button>
                 <p> <i className="fa-solid fa-user"></i>{name}</p>
 
             </div>

@@ -124,7 +124,7 @@ export default function ToDo({ userId, setPage }) {
 
                 <div className="head">
                    
-
+                    <button onClick={()=>setMenu('left-box-open')}>Menu</button>
                     <label htmlFor="">Add Your Task</label>
 
                     <div className="textInputWrapper">

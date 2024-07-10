@@ -737,12 +737,34 @@ button:active {
       hsl(45deg 100% 50%) 88%,
       hsl(55deg 100% 50%) 100%);
   color: white;
+  position: absolute;
+  z-index: -1;
+}
+.left-box-open{
+  height: 100vh;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(35deg,
+      hsl(240deg 100% 20%) 0%,
+      hsl(289deg 100% 21%) 14%,
+      hsl(315deg 100% 27%) 26%,
+      hsl(329deg 100% 36%) 37%,
+      hsl(337deg 100% 43%) 48%,
+      hsl(357deg 91% 59%) 58%,
+      hsl(17deg 100% 59%) 67%,
+      hsl(34deg 100% 53%) 77%,
+      hsl(45deg 100% 50%) 88%,
+      hsl(55deg 100% 50%) 100%);
+  color: white;
+  position: absolute;
+  z-index: 999;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s ease-in-out;
+
 }
 
 
-.homepage.left-box-hidden {
-  padding-left: 0;
-}
 
 .theme div {
   background-color: green;
@@ -824,7 +846,6 @@ button:active {
 
 /* Responsive for 427px */
 @media screen and (max-width:427px) {
-
   header {
     height: 20px;
   }
@@ -835,7 +856,9 @@ button:active {
     align-items: center;
     width: 70vw;
   }
-
+.left-box-open{
+  width: 50vw;
+}
   .left-nav {
     display: flex;
     justify-content: start;
