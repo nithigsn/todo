@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+
+
 export default function LeftBox({ userId, setPage, setTheme, menu, setMenu }) {
 
     const [name, setName] = useState('');
@@ -15,6 +17,8 @@ export default function LeftBox({ userId, setPage, setTheme, menu, setMenu }) {
     useEffect(() => {
         localStorage.setItem('storedName', name);
     }, [name]);
+
+
 
 
 
@@ -56,7 +60,7 @@ export default function LeftBox({ userId, setPage, setTheme, menu, setMenu }) {
 
 
 
-                <button onClick={() => setMenu('left-box')}>Close Menu</button>
+                <button className="closebtn" onClick={() => setMenu('left-box')}><i class="fa-solid fa-xmark"></i></button>
                 <p> <i className="fa-solid fa-user"></i>{name}</p>
 
             </div>

@@ -23,12 +23,13 @@ export default function ToDo({ userId, setPage }) {
         }
     }, []);
 
-
     const [menu, setMenu] = useState('left-box')
 
     function handleMenu() {
         if (menu === 'left-box') {
-            setMenu('left-box-open')
+            setMenu('left-box-open');
+        } else {
+            setMenu('left-box');
         }
     }
 
@@ -111,26 +112,14 @@ export default function ToDo({ userId, setPage }) {
 
     return (
         <div className="homepage">
-
-            <LeftBox setTheme={setTheme} setPage={setPage} userId={userId} menu={menu} setMenu={setMenu}/>
-
-
+            <LeftBox setTheme={setTheme} setPage={setPage} userId={userId} menu={menu} setMenu={setMenu} />
             <div className={theme}>
-
-
-
-
-                <h3>ToDo that will keep you remember</h3>
-
+                <h3>Task Champ</h3>
                 <div className="head">
-                   
-                    <button onClick={()=>setMenu('left-box-open')}>Menu</button>
-                    <label htmlFor="">Add Your Task</label>
-
+                    <button className="menubtn" onClick={handleMenu}><i className="fa-solid fa-bars"></i></button>
                     <div className="textInputWrapper">
-                        <input placeholder="Type Here" type="text" className="textInput" value={input} onChange={(e) => setInput(e.target.value)} />
+                        <input placeholder="Add Your Task" type="text" className="textInput" value={input} onChange={(e) => setInput(e.target.value)} />
                     </div>
-
                     <div className="todo-btn">
                         <div className="add-btn">
                             <button type="button" className="button" onClick={handleAdd}>
