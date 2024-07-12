@@ -57,13 +57,12 @@ export default function LoginPage({ setPage, setUserId }) {
         <div className="login">
 
             <header>
-                <div className="left-nav">
-                    <div className="logo-img"></div>
-                    <h3>Task Champ</h3>
-                </div>
 
-                <div className="right-nav">
-                </div>
+                <div className="logo-img"></div>
+                <h3>Task Champ</h3>
+
+
+
             </header>
 
             <div className="centerbox">
@@ -77,6 +76,7 @@ export default function LoginPage({ setPage, setUserId }) {
 
                         <h2>Welcome Back !</h2>
                         <h3>Tasks are waiting for You </h3>
+                        
                     </div>
 
 

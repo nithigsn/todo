@@ -114,36 +114,48 @@ export default function ToDo({ userId, setPage }) {
         <div className="homepage">
             <LeftBox setTheme={setTheme} setPage={setPage} userId={userId} menu={menu} setMenu={setMenu} />
             <div className={theme}>
-                <h3>Task Champ</h3>
-                <div className="head">
+
+                <div className="todoheader">
                     <button className="menubtn" onClick={handleMenu}><i className="fa-solid fa-bars"></i></button>
-                    <div className="textInputWrapper">
-                        <input placeholder="Add Your Task" type="text" className="textInput" value={input} onChange={(e) => setInput(e.target.value)} />
-                    </div>
-                    <div className="todo-btn">
-                        <div className="add-btn">
-                            <button type="button" className="button" onClick={handleAdd}>
-                                <span className="button__text">Add Task</span>
-                                <span className="button__icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" stroke="currentColor" height="24" fill="none" className="svg">
-                                        <line y2="19" y1="5" x2="12" x1="12"></line>
-                                        <line y2="12" y1="12" x2="19" x1="5"></line>
-                                    </svg>
-                                </span>
+                    <h3>Task Champ</h3>
+                </div>
+
+
+                <div className="wrap">
+                    <div className="head">
+
+                        <div className="textInputWrapper">
+                            <input placeholder="Add Your Task" type="text" className="textInput" value={input} onChange={(e) => setInput(e.target.value)} />
+                        </div>
+
+
+                        <div className="todo-btn">
+
+
+                            <button type="button" className="add-btn" onClick={handleAdd}>
+
+                                Add
+                            </button>
+
+
+                            <button className="save-btn" onClick={handleSaveBtn}>
+                                <span>Save</span>
                             </button>
                         </div>
-                        <button className="save-btn" onClick={handleSaveBtn}>
-                            <span>Save</span>
-                        </button>
+
+                        {arr.length === 0 && (
+                            <div className="info">
+                                <p>Lost Track Of Tasks? <br />
+                                    Tasks met their Deadline? <br />
+                                    Well! Add Your Tasks Here</p>
+                            </div>
+                        )}
                     </div>
-                    {arr.length === 0 && (
-                        <div className="info">
-                            <p>Lost Track Of Tasks? <br />
-                                Tasks met their Deadline? <br />
-                                Well! Add Your Tasks Here</p>
-                        </div>
-                    )}
+
                 </div>
+
+
+
                 <ol>
                     {arr.map((item, index) => (
                         <div key={index} className="task">

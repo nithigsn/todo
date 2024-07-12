@@ -99,27 +99,13 @@ i {
 
 .login header {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   height: 10vh;
   width: 100vw;
   border-bottom: 1px solid gray;
-
-}
-
-.login .left-nav,
-.right-nav {
-  display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 50vw;
+
 }
-
-
-
-.left-nav .logo-img {
-  margin-left: 100px;
-}
-
 .logo-img {
   height: 8vh;
   width: 8vh;
@@ -390,7 +376,6 @@ i {
 
 .textInputWrapper:focus-within:after {
   border-bottom: 2px solid var(--accent-color);
-
   transform: scaleX(1);
 }
 
@@ -449,6 +434,13 @@ i {
   border: none;
   width: 50px;
   border-radius: 5px;
+ 
+}
+.wrap{
+  display: flex;
+  width: 60vw;
+  align-items: center;
+
 }
 
 
@@ -456,19 +448,6 @@ i {
   width: 100%;
   display: flex;
   justify-content: space-around;
-}
-
-.head .date {
-  height: 40px;
-}
-
-label {
-  font-size: large;
-  font-weight: 10px;
-}
-
-.head label {
-  color: white;
 }
 
 ol {
@@ -483,129 +462,17 @@ h2 {
 
 .todo-btn {
   display: flex;
-  width: 300px;
+  width: 120px;
   justify-content: space-between;
 }
 
-.todo-btn .button {
-  position: relative;
-  width: 150px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+.todo-btn button{
+  color: rgba(255, 255, 255, 0.582);
   background-color: #252525;
-  border-radius: 5px;
-}
-
-.todo-btn .button,
-.button__icon,
-.button__text {
-  transition: all 0.3s;
-}
-
-.todo-btn .button .button__text {
-  transform: translateX(30px);
-  color: #fff;
-  font-weight: 600;
-}
-
-.todo-btn .button .button__icon {
-  position: absolute;
-  transform: translateX(109px);
-  height: 100%;
-  width: 39px;
-  background-color: #34974d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.todo-btn .button .svg {
-  width: 30px;
-  stroke: #fff;
-}
-
-.todo-btn .button:hover {
-  background: #34974d;
-}
-
-.todo-btn .button:hover .button__text {
-  color: transparent;
-}
-
-.todo-btn .button:hover .button__icon {
-  width: 148px;
-  transform: translateX(0);
-}
-
-.todo-btn .button:active .button__icon {
-  background-color: #2e8644;
-}
-
-.todo-btn .button:active {
-  border: 1px solid #2e8644;
-}
-
-.save-btn {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2px;
-  background: #252525;
-  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
   cursor: pointer;
-  border: none;
-  height: 45px;
-  width: 100px;
 }
-
-.save-btn:after {
-  content: " ";
-  width: 0%;
-  height: 100%;
-  background: #34974d;
-  position: absolute;
-  transition: all 0.4s ease-in-out;
-  right: 0;
-}
-
-.save-btn:hover::after {
-  right: auto;
-  left: 0;
-  width: 100%;
-}
-
-.save-btn span {
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
-  padding: 18px 25px;
-  color: #fff;
-  font-weight: 700;
-  z-index: 20;
-  transition: all 0.3s ease-in-out;
-}
-
-.save-btn:hover span {
-  color: white;
-  animation: scaleUp 0.3s ease-in-out;
-}
-
-@keyframes scaleUp {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(0.95);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+&button:active{
+  transition: scale(0.9);
 }
 
 footer p {
@@ -661,6 +528,7 @@ footer p {
   transition-duration: .3s;
   overflow: hidden;
   z-index: 99;
+  
 }
 
 .svgIcon {
@@ -713,6 +581,28 @@ button:active {
   display: flex;
 
 
+}
+.homepage .todoheader{
+  display: flex;
+  width: 100vw;
+  justify-self: center;
+  align-items: center;  
+  justify-content: flex-start;
+}
+
+.menubtn{
+  height: 40px;
+  width: 50px;
+  background-color: #252525;
+  border: none;
+  outline: none;
+}
+.menubtn i{
+  color: white;
+}
+.todoheader h3{
+  width: 90vw;
+  text-align: center;
 }
 
 .left-box {
@@ -874,9 +764,7 @@ button:active {
 
 /* Responsive for 427px */
 @media screen and (max-width:427px) {
-  header {
-    height: 20px;
-  }
+
 
   .login-box {
     flex-direction: column;
@@ -888,18 +776,19 @@ button:active {
   .left-box-open {
     width: 50vw;
   }
-
-  .left-nav {
-    display: flex;
-    justify-content: start;
-
-  }
-
-  .loginleft-box h2,
-  h3 {
+  .loginleft-box{
+    align-items: center;
     width: 100%;
-    margin: 10px 0;
   }
+  .loginleft-box h2,h3{
+    margin-left: 0;
+    text-align: center;
+  }
+  .login-btn{
+    margin-top: 40px;
+  }
+
+
 
   .input {
     width: 100px;
@@ -922,17 +811,6 @@ button:active {
   .bucket-list {
     width: 100%;
   }
-
-  .head {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .homepage h3 {
-    text-align: center;
-  }
-
   .task {
     justify-content: space-evenly;
     width: 90vw;
@@ -949,10 +827,7 @@ button:active {
     width: 100vw;
 
   }
-  .menubtn{
-    position: absolute;
-    left: 0;
-  }
+
   .triggered{
     margin-top: -700px;
     margin-right:270px;
@@ -960,6 +835,19 @@ button:active {
 
   }
   .info{
-    margin-top: 70vh;
+    margin-top: 20vh;
   }
+
+  .todo-btn{
+    margin-top: 10px;
+  }
+  .wrap{
+    width: 100vw;
+  }
+  .head{
+    display: flex;
+    justify-content: space-around;
+   
+  }
+
 }

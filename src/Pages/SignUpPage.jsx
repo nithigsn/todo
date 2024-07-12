@@ -5,10 +5,10 @@ export default function SignUpPage({ setPage, setUserId }) {
     const [password, setPassword] = useState('');
     const [confirmpassword, setConfirmPassword] = useState('');
 
-     //funtion signup
+    //funtion signup
     function handleSignUp() {
 
-        
+
         if (password === confirmpassword) {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
@@ -31,7 +31,7 @@ export default function SignUpPage({ setPage, setUserId }) {
                     if (result.status) {
                         setUserId(result.data._id);
                         setPage('home');
-                        
+
                     }
                 })
         }
@@ -44,13 +44,11 @@ export default function SignUpPage({ setPage, setUserId }) {
         <div className="login">
 
             <header>
-                <div className="left-nav">
-                    <div className="logo-img"></div>
-                    <h3>Task Champ</h3>
-                </div>
 
-                <div className="right-nav">
-                </div>
+                <div className="logo-img"></div>
+                <h3>Task Champ</h3>
+
+
             </header>
 
 
