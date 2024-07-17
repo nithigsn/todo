@@ -749,13 +749,14 @@ button:active {
 }
 
 .closebtn{
-  height: 30px;
-  width: 40px;
-  margin-left: 40px;
-  margin-top: 60px;
+  
+  height: 40px;
+  width: 50px;
+  margin-top: 10px;
   border: none;
-  backdrop-filter: blur(10px);
-  box-shadow: 5px 5px 25px black;
+  background-color: black;
+  color: white;
+  
 
 }
 
