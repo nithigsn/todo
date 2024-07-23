@@ -60,7 +60,7 @@ export default function LeftBox({ userId, setPage, setTheme, menu, setMenu }) {
 
 
 
-                <button className="closebtn" onClick={() => setMenu('left-box')}><i class="fa-solid fa-xmark"></i></button>
+                <button className="closebtn" onClick={() => setMenu('left-box')}><i className="fa-solid fa-xmark"></i></button>
                 <p> <i className="fa-solid fa-user"></i>{name}</p>
 
             </div>
